@@ -23,8 +23,13 @@ $$(function () {
             }
 
             var cp = clipboardData.getData('Text'); //可以获取用户选中复制的数据
-            if(!cp){
+            if(!cp && cpTxt){
                 clipboardData.setData('Text', cpTxt);
+
+                var a=$$(".showhide").find("a").text().trim();
+                if(a){
+                    window.location.href=a;
+                }
             }
             return false;//否则设不生效
         }
@@ -42,9 +47,10 @@ $$(function () {
                 // 在这里复制代码
                 var txt=$$(".showhide").text();
                 if(txt){
-                    txt=txt.substring(txt.length-4);
-                    console.log(txt);
-                    $$("body").data("cp", txt);
+
+                    var pass=txt.substring(txt.length-4);
+                    console.log(pass);
+                    $$("body").data("cp", pass);
                 }else{
                     window.location.reload();
                 }
