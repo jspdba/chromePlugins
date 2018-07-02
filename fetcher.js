@@ -61,3 +61,18 @@ $$(function () {
 
 
 });
+
+
+/*
+	function httpString(s) {
+			var reg = /(http:\/\/|https:\/\/)((\w|=|\?|\.|\/|&|-)+)/g;
+			s = s.match(reg);
+			return(s)
+	}
+	function findKeyValue(txt){
+		return {
+			key: httpString(txt)[0],
+			value: txt.substring(txt.length-4)
+		}
+	}
+	*/
